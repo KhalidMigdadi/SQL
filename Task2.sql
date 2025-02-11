@@ -43,8 +43,8 @@ CREATE TABLE StudentCourse (
     StudentID INT,
     CourseID INT,
     --PRIMARY KEY (StudentID, CourseID),
-    FOREIGN KEY (StudentID) REFERENCES Students1(ID) ON DELETE CASCADE,
-    FOREIGN KEY (CourseID) REFERENCES Courses1(ID) ON DELETE CASCADE
+    FOREIGN KEY (StudentID) REFERENCES Students1(ID),
+    FOREIGN KEY (CourseID) REFERENCES Courses1(ID) 
 );
 
 
@@ -83,11 +83,11 @@ INSERT INTO Students1 (ID, FirstName, LastName, Email, PhoneNumber) VALUES
 
 -- Insert Data into StudentCourse (Many-to-Many Relationship)
 INSERT INTO StudentCourse (StudentID, CourseID) VALUES
-(1, 101), -- Sophia takes Mathematics
-(1, 103), -- Sophia takes Chemistry
-(2, 102), -- Liam takes Physics
-(3, 101), -- Isabella takes Mathematics
-(4, 105); -- Mason takes Computer Science
+(1, 101),
+(1, 103), 
+(2, 102),
+(3, 101),
+(4, 105);
 
 
 select * from StudentCourse;
